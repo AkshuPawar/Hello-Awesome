@@ -3,3 +3,5 @@ steps:
   args: ['build', '-t', 'gcr.io/akshu-hello-awesome/hello-awesome:$SHORT_SHA', '.'] 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/akshu-hello-awesome/hello-awesome:$SHORT_SHA'] 
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'akshu-hello-awesome', '--region=asia-east1', '--platform=managed', '--image=gcr.io/akshu-hello-awesome/hello-awesome:$SHORT_SHA]
