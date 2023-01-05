@@ -3,6 +3,6 @@ steps:
   args: ['build', '-t', 'gcr.io/space-373010/hello-awesome:$SHORT_SHA', '.'] 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/space-373010/hello-awesome:$SHORT_SHA'] 
-#- name: 'gcr.io/cloud-builders/gcloud'
- # args: ['run', 'deploy', 'space', '--region=asia-east1', '--platform=managed', '--image=gcr.io/space-373010/hello-awesome:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'space', '--region=asia-east1', '--platform=managed', '--image=gcr.io/space-373010/hello-awesome:$SHORT_SHA']
  
